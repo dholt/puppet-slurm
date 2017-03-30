@@ -24,10 +24,4 @@ class slurm::slurmdb::config {
     require => Class['slurm::slurmdb::install'],
     notify  => Class['slurm::slurmdb::service']
   }
-
-  logrotate::file { "slurmdbd.log":
-    log => "/var/log/slurm/slurmdbd.log",
-    options => ['compress', 'rotate 10', 'size 10M', 'nomail'],
-    postrotate => "/sbin/service slurmdbd reconfig >/dev/null 2>&1",
-  }
 }
