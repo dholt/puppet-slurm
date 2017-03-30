@@ -15,12 +15,6 @@ class slurm::master::config {
     ensure  => 'directory',
   }
 
-  file{'/etc/slurm':
-    ensure  => 'link',
-    target  => '/etc/slurm-llnl',
-    force   => 'true',
-  }
-
   $nfs_volume = hiera('slurm_sharedstate_nfs_url', undef)
 
   if $nfs_volume {
