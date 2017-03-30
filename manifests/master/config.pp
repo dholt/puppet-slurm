@@ -94,7 +94,7 @@ class slurm::master::config {
   }
 
   logrotate::file { "slurmctld.log":
-    log => "/var/log/slurm/slurmctld.log",
+    log => "/var/log/slurmctld.log",
     options => ['compress', 'rotate 10', 'size 10M', 'nomail'],
     postrotate => "/sbin/service slurm reconfig >/dev/null 2>&1",
   }
