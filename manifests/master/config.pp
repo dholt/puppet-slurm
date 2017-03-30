@@ -1,8 +1,8 @@
 class slurm::master::config {
 
-  if ( $::osfamily != 'RedHat' ) {
-    fail('This module is only tested on RedHat based machines')
-  }
+#  if ( $::osfamily != 'RedHat' ) {
+#    fail('This module is only tested on RedHat based machines')
+#  }
 
   file{'/var/spool/slurmctld':
     ensure  => 'directory',
