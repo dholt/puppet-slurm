@@ -1,10 +1,9 @@
 class slurm::slurmdb::config {
 
-  # Not sure if this is necessary.
-  concat{'/etc/slurm/slurm.conf':
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
+  file{'/etc/slurm':
+    ensure  => 'link',
+    target  => '/etc/slurm-llnl',
+    force   => 'true',
     require => Class['slurm::slurmdb::install'],
     notify  => Class['slurm::slurmdb::service']
   }
