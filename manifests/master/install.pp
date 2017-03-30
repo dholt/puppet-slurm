@@ -1,7 +1,4 @@
 class slurm::master::install {
-  package {'nfs-common':
-     ensure => 'present',
-  }
   package {'slurm':
      ensure => $slurm::params::slurm_version,
   }
