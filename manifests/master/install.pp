@@ -1,5 +1,5 @@
 class slurm::master::install {
-  package {'nfs-utils':
+  package {'nfs-common':
      ensure => 'present',
   }
   package {'slurm':
