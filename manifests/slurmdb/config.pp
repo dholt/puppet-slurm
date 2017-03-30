@@ -1,9 +1,5 @@
 class slurm::slurmdb::config {
 
-  if ( $::osfamily != 'RedHat' ) {
-    fail('This module is only tested on RedHat based machines')
-  }
-
   # Not sure if this is necessary.
   concat{'/etc/slurm/slurm.conf':
     owner   => 'root',
