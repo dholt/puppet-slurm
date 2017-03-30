@@ -1,5 +1,5 @@
 class slurm::params {
-  $slurm_version = hiera('slurm_version', '2.3.5-2.ai6')
+  $slurm_version = hiera('slurm_version', 'latest')
   $slurm_user_uid = hiera('slurm_user_uid', 3000)
   # -> slurmctld.conf
   $slurm_master_hostname = hiera('slurm_master_hostname', 'master.example.org')
