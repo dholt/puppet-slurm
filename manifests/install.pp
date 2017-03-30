@@ -1,5 +1,5 @@
 class slurm::install {
-  package {'munge':
+  package { ['munge', 'libmunge-dev']:
      ensure => 'present',
   }
 }
