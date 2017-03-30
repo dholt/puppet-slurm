@@ -1,14 +1,8 @@
 class slurm::master::install {
-  package {'slurm':
+  package {'slurmdbd':
      ensure => $slurm::params::slurm_version,
   }
-  package {'slurm-plugins':
+  package {'slurmctld',
      ensure => $slurm::params::slurm_version,
-  }
-  package {'slurm-munge':
-     ensure => $slurm::params::slurm_version,
-  }
-  package {'auks-slurm':
-     ensure => $auks::params::auks_version,
   }
 }
